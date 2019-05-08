@@ -1,7 +1,7 @@
 {
   "name": "webpackTemplate",
   "version": "1.0.0",
-  "description": "webpackTemplateg",
+  "description": "webpackTemplate",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --env development",
