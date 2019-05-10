@@ -27,7 +27,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1",
-    "tar": ">=4.4.2"
+    "jquery": "^3.4.1",
+    "normalize.css": "^8.0.1"
   }
 }

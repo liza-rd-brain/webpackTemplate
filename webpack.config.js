@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const merge = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require("webpack");
 
 const PATHS = {
   source: path.join(__dirname, "src"),
@@ -9,7 +10,6 @@ const PATHS = {
 };
 
 const common = merge([
-
   {
     entry: PATHS.source + "/index.js",
     output: {
@@ -20,6 +20,11 @@ const common = merge([
       new HtmlWebpackPlugin({
         filename: "index.html",
         template: PATHS.source + "/index.pug"
+      }),
+      new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "window.jQuery": "jquery"
       })
     ],
     module: {
@@ -59,8 +64,7 @@ const production = merge([
           test: /\.scss$/,
           use: [
             {
-              loader: MiniCssExtractPlugin.loader,
-            
+              loader: MiniCssExtractPlugin.loader
             },
             "css-loader",
             "sass-loader"
